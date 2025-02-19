@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 
-	"dagger/go/internal/dagger"
+	"github.com/vrunoa/daggerverse/go/internal/dagger"
 )
 
 const (
