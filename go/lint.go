@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+
+	"dagger.io/dagger/dag"
 )
 
 const (
@@ -10,8 +12,7 @@ const (
 
 // Lint - Lint the Go source code with golangci-lint
 func (m *Go) Lint(ctx context.Context, src *Directory) (*Container, error) {
-	cli := dag.Pipeline("golangci-lint")
-	return cli.Container().
+	return dag.Container().
 		From(golangciImage).
 		WithWorkdir("/src").
 		WithMountedDirectory("/src", src).
