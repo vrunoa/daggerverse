@@ -11,12 +11,12 @@ const (
 )
 
 // Lint - Lint the Go source code with golangci-lint
-func (m *Go) Lint(ctx context.Context, src *dagger.Directory) (string, error) {
+func (m *Go) Lint(ctx context.Context, src *dagger.Directory) (*dagger.Container, error) {
 	return dag.Container().
 		From(golangciImage).
 		WithWorkdir("/src").
 		WithMountedDirectory("/src", src).
 		WithEnvVariable("GOWORK", "off").
 		WithExec([]string{"golangci-lint", "run", "/src/...", "-v", "--timeout=10m"}).
-		Stdout(ctx)
+		Sync(ctx)
 }
