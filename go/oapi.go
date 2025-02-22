@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	oapiImage = "ghcr.io/vrunoa/oapi-codegen:2.4.1"
+	oapiImage = "ghcr.io/vrunoa/daggerverse:oapi-codegen-2.4.1"
 )
 
 // Codegen generates Go code from an OpenAPI spec using oapi-codegen.
