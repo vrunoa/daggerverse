@@ -17,5 +17,5 @@ dagger call -m github.com/vrunoa/daggerverse/go@main openapi-validate --src=$(pw
 
 #### oapi-codegen
 ```sh {name="oapi-codegen"}
-dagger -m github.com/vrunoa/daggerverse/go@main call codegen --src=$(pwd) --config=./codegen/manager.yaml --spec=./spec/manager.yaml --target=gen/service -o ./gen/service
+dagger call -m github.com/vrunoa/daggerverse/go@main codegen --src=$(pwd) --config=./codegen/manager.yaml --spec=./spec/manager.yaml --target=gen/service -o ./gen/service
 ````
