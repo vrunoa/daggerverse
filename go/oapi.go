@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	oapiImage = "ghcr.io/vrunoa/oapi-codegen:latest"
+	oapiImage = "ghcr.io/vrunoa/oapi-codegen:2.4.1"
 )
 
 // Codegen generates Go code from an OpenAPI spec using oapi-codegen.
@@ -16,12 +16,13 @@ func (m *Go) Codegen(
 	src *dagger.Directory,
 	config string,
 	spec string,
-) (*dagger.Container, error) {
+	target string,
+) *dagger.Directory {
 	return dag.Container().
 		From(oapiImage).
 		WithWorkdir("/src").
 		WithMountedDirectory("/src", src).
 		WithEnvVariable("GOWORK", "off").
 		WithExec([]string{"oapi-codegen", "--config", config, spec}).
-		Sync(ctx)
+		Directory(target)
 }
