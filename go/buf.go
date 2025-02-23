@@ -10,7 +10,6 @@ const (
 	bufImage = "bufbuild/buf:1.50.0"
 )
 
-
 func (m *Go) Bufgen(
 	ctx context.Context,
 	src *dagger.Directory,
