@@ -8,7 +8,6 @@ A collection of dagger modules for pipelines and local development.
 dagger call -m github.com/vrunoa/daggerverse/go@main lint --src=$(pwd)
 ```
 
-
 #### openapi validatation
 
 ```sh {name="openapi-validate"}
@@ -16,6 +15,13 @@ dagger call -m github.com/vrunoa/daggerverse/go@main openapi-validate --src=$(pw
 ```
 
 #### oapi-codegen
+
 ```sh {name="oapi-codegen"}
 dagger call -m github.com/vrunoa/daggerverse/go@main codegen --src=$(pwd) --config=./codegen/manager.yaml --spec=./spec/manager.yaml --target=gen/service -o ./gen/service
-````
+```
+
+#### buf generate
+
+```sh {name="buf"}
+dagger call -m github.com/vrunoa/daggerverse/go@main bufgen --src=$(pwd) --target=gen/proto -o ./gen/proto
+```
