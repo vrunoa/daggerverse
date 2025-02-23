@@ -25,3 +25,8 @@ dagger call -m github.com/vrunoa/daggerverse/go@main codegen --src=$(pwd) --conf
 ```sh {name="buf"}
 dagger call -m github.com/vrunoa/daggerverse/go@main bufgen --src=$(pwd) --target=gen/proto -o ./gen/proto
 ```
+
+#### generate mocks
+```sh {name="mockery"}
+dagger call -m github.com/vrunoa/daggerverse/go@main mockery --src=$(pwd) --target=mocks -o ./mocks
+```
