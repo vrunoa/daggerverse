@@ -10,6 +10,7 @@ const (
 	bufImage = "bufbuild/buf:1.50.0"
 )
 
+// Bufgen generates code using buf.
 func (m *Go) Bufgen(
 	ctx context.Context,
 	src *dagger.Directory,

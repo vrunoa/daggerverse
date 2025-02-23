@@ -10,7 +10,7 @@ const (
 	openapitoolsImage = "openapitools/openapi-generator-cli:latest"
 )
 
-// Validate - validate openapi spec
+// OpenapiValidate validate openapi specs
 func (m *Go) OpenapiValidate(ctx context.Context, src *dagger.Directory, spec string) (string, error) {
 	return dag.Container().
 		From(openapitoolsImage).

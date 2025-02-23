@@ -10,6 +10,7 @@ const (
 	mockeryImage = "vektra/mockery:v2.52"
 )
 
+// Mockery generates mocks for interfaces using vektra/mockery.
 func (m *Go) Mockery(
 	ctx context.Context,
 	src *dagger.Directory,
