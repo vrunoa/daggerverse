@@ -30,3 +30,8 @@ dagger call -m github.com/vrunoa/daggerverse/go@main bufgen --src=$(pwd) --targe
 ```sh {name="mockery"}
 dagger call -m github.com/vrunoa/daggerverse/go@main mockery --src=$(pwd) --target=mocks -o ./mocks
 ```
+
+#### test
+```sh {name="test"}
+dagger call -m github.com/vrunoa/daggerverse/go@main test --src=$(pwd) -o coverage.out
+```
