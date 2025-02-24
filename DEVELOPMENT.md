@@ -35,3 +35,8 @@ dagger call -m github.com/vrunoa/daggerverse/go@main mockery --src=$(pwd) --targ
 ```sh {name="test"}
 dagger call -m github.com/vrunoa/daggerverse/go@main test --src=$(pwd) -o coverage.out
 ```
+
+#### coverage
+```sh {name=coverage}
+dagger call -m github.com/vrunoa/daggerverse/go@main coverage --src=$(pwd) --coverfile=coverage.out --threshold=12
+```
