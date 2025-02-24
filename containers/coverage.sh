@@ -13,7 +13,7 @@ fi
 go tool cover -func=$coverfile
 out=$(go tool cover -func $coverfile | grep "total:" | awk '{print $3}' | grep -Eo '^\d*')
 if [[ $out -lt $threshold ]]; then
-    echo "\033[0;31mcoverage below threshold $threshold%"
+    echo "coverage below threshold $threshold%"
     exit 1
 fi
 
