@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	golangciImage = "golangci/golangci-lint:v1.61-alpine"
+	golangciImage = "golangci/golangci-lint:v1.64-alpine"
 )
 
 // Lint - Lint the Go source code with golangci-lint
