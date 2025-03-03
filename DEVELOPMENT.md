@@ -36,3 +36,9 @@ dagger call -m github.com/vrunoa/daggerverse/go@main test --src=$(pwd) -o covera
 ```sh {name=coverage}
 dagger call -m github.com/vrunoa/daggerverse/go@main coverage --src=$(pwd) --coverfile=coverage.out --threshold=12
 ```
+
+#### cover treemap
+```sh {name=cover-treemap}
+dagger call -m github.com/vrunoa/daggerverse/go@main cover-treemap --src=$(pwd) --coverfile=coverage.out --out=coverage.svg -o coverage.svg
+```
+
