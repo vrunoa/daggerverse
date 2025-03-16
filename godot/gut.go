@@ -10,7 +10,7 @@ const (
 	godotImage = "barichello/godot-ci:4.4"
 )
 
-// Test running go test
+// Test running godot unit tests with Gut
 func (m *Godot) Gut(ctx context.Context, src *dagger.Directory, testPath string) (*dagger.File, error) {
 	cont, err := dag.Container().
 		From(godotImage).
