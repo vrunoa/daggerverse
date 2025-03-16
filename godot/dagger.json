@@ -1,0 +1,6 @@
+{
+  "name": "godot",
+  "engineVersion": "v0.15.4",
+  "sdk": "go",
+  "source": "."
+}
