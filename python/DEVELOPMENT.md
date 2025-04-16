@@ -3,6 +3,6 @@
 ## Python Development
 
 ```sh {name=lint}
-dagger call -m github.com/vrunoa/daggerverse/python@main riff --src=$(pwd)
+dagger call -m github.com/vrunoa/daggerverse/python@main ruff --src=$(pwd)
 ```
 
