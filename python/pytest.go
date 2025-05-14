@@ -18,7 +18,6 @@ func (m *Python) Pytest(
 		From(pyImage).
 		WithWorkdir("/src").
 		WithMountedDirectory("/src", src).
-		WithEnvVariable("GOWORK", "off").
 		WithExec([]string{"pip", "install", "-e", "."}).
 		WithExec([]string{"pytest"}).
 		Sync(ctx)
