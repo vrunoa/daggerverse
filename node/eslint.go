@@ -15,6 +15,7 @@ func (m *Node) Eslint(
 		WithWorkdir("/src").
 		WithMountedDirectory("/src", src).
 		WithEnvVariable("GOWORK", "off").
+		WithExec([]string{"npm", "ci"}).
 		WithExec([]string{"npx", "eslint", "."}).
 		Sync(ctx)
 }
