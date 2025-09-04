@@ -19,6 +19,11 @@ func (m *Godot) Gut(ctx context.Context, src *dagger.Directory, testPath string)
 		WithEnvVariable("GOWORK", "off").
 		WithExec([]string{
 			"godot",
+			"--headless",
+			"--import",
+		}).
+		WithExec([]string{
+			"godot",
 			"-d",
 			"-s",
 			"--headless",
