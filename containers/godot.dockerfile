@@ -37,9 +37,13 @@ websockify --web=/usr/share/novnc/ 8080 localhost:5900 &
 
 export LIBGL_ALWAYS_SOFTWARE=1
 
+# Pre-import the project to avoid first-time import delays during tests
+godot --headless --import --path /src
+
+# Run Godot in headless mode to execute GUT tests
 DISPLAY=:99 godot -d -s --path /src ./addons/gut/gut_cmdln.gd -gdir $1 -gconfig=$2 -gexit
 EOF
- 
+
 RUN chmod +x /entrypoint.sh
 
 ENV DISPLAY=:99
