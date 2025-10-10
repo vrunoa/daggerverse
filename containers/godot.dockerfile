@@ -10,16 +10,6 @@ RUN cat > /entrypoint.sh <<'EOF'
 #!/bin/bash
 set -euo pipefail
 
-if [[ -z $1 ]]; then
-    echo "Missing tests folder argument"
-    exit 1
-fi
-
-if [[ -z $2 ]]; then
-    echo "Missing gut config path argument"
-    exit 1
-fi
-
 # Start virtual X server on :99
 Xvfb :99 -screen 0 1280x720x24 &
 
@@ -41,7 +31,9 @@ export LIBGL_ALWAYS_SOFTWARE=1
 godot --headless --import --path /src
 
 # Run Godot in headless mode to execute GUT tests
-DISPLAY=:99 godot -d -s --path /src ./addons/gut/gut_cmdln.gd -gdir $1 -gconfig=$2 -gexit
+echo "godot -s --path /src ./addons/gut/gut_cmdln.gd $@"
+DISPLAY=:99 godot -s --path /src ./addons/gut/gut_cmdln.gd $@
+exit $?
 EOF
 
 RUN chmod +x /entrypoint.sh
