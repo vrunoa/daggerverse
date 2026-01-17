@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	godotImage = "barichello/godot-ci:4.4"
+	godotImage = "ghcr.io/vrunoa/godot-ci:latest"
 )
 
 // Test running godot unit tests with Gut
@@ -42,3 +42,4 @@ func (m *Godot) Gut(ctx context.Context, src *dagger.Directory, testPath string)
 	}
 	return cont.File("coverage.xml"), nil
 }
+
