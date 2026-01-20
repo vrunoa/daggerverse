@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	mockeryImage = "vektra/mockery:v2.52"
+	mockeryImage = "vektra/mockery:v2.53"
 )
 
 // Mockery generates mocks for interfaces using vektra/mockery.
