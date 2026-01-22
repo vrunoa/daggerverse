@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	goImage = "golang/:1.22"
+	goImage = "golang/:1.24"
 )
 
 // Test running go test
